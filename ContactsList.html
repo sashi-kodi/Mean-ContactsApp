@@ -1,0 +1,24 @@
+<h1>Contact List</h1>
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>&nbsp;</th>
+                    
+                </tr>
+                </thead>
+                    <tbody>
+                         <tr ng-repeat="contact in contactslist">
+                              <td>{{contact.name}}</td>
+                             <td>{{contact.email}}</td>
+                             <td>{{contact.phone}}</td>
+                             <td><button class="btn btn-info" ng-click="update($index)">Update</button></td>
+                         </tr>
+                
+                    </tbody>
+               
+            </table>
+
+<div ui-view></div>

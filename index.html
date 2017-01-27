@@ -1,0 +1,47 @@
+<!doctype>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Contacts List App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <style>
+        .intro{
+            font-family: 'Pacifico', cursive;
+        }
+        
+    </style>
+</head>
+
+    <body ng-app="contactsApp">
+            <nav class="navbar navbar-inverse" role="navigation">
+                <div class="navbar-header">
+                    <a class="navbar-brand" ui-sref="home">Contacts App</a>
+                </div>
+                <ul class="nav navbar-nav">
+                     <li><a ui-sref="getContacts"><i class="fa fa-address-book" aria-hidden="true"></i>ContactsList</a></li>
+                    <li><a ui-sref="addContact"><i class="fa fa-plus" aria-hidden="true"></i>Create</a></li>
+                    <li><a ui-sref="updateContact"><i class="fa fa-pencil" aria-hidden="true"></i>Update</a></li>
+                    <li><a ui-sref="deleteContact"><i class="fa fa-trash" aria-hidden="true"></i>Delete</a></li>
+                </ul>
+            </nav>
+        
+        <img ng-src="./images/Contacts.jpg" class="img-responsive" width="100%">
+        <div class="container">
+            <div ui-view></div>
+        </div>
+    </body>
+    <script src="app.js"></script>
+    <script src="Services/ContactsFactory.js"></script>
+<script src="Controllers/ContactsListController.js"></script>
+    <script src="Controllers/AddContactController.js"></script>
+    <script src="Controllers/UpdateContactController.js"></script>
+    <script src="Controllers/UpdateContactController2.js"></script>
+    <script src="Controllers/DeleteController.js"></script>
+</html>

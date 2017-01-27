@@ -1,0 +1,33 @@
+<div class="well">
+    <p>Enter the email of the contact that you want to update</p>
+   <input type="text" ng-model=email>
+    
+    <button class="btn btn-info" ng-click="getContact()">Update</button>
+    
+    <div ng-show="contact">
+           <table class="table">
+            <tr>
+                <th>
+                Name
+                </th>
+
+                <th>
+                Email
+                </th>
+
+                <th>
+                Phone
+                </th>
+                </tr>
+            <tr>
+              <td><input type="text" ng-model="contact.name"></td>
+                <td><input type="email" readonly ng-model="contact.email"></td>
+                <td><input type="text" ng-model="contact.phone"></td>
+            </tr>
+            </table>
+
+            <button class="btn btn-info" ng-click="updateContact()">Update Contact</button>
+    </div>
+    
+     <p ng-show="message">STATUS : {{message}}</p>
+</div>
