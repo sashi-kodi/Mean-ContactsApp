@@ -24,6 +24,13 @@
            controller: 'UpdateContactController2'
          
        })
+        .state('getContacts.delete', {
+           
+           templateUrl:'Partials/deleteContact2.html'
+          
+         
+       })
+      
         .state('addContact', {
            url:'/addcontact',
            templateUrl:'Partials/addContact.html',

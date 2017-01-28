@@ -10,7 +10,23 @@ angular.module('contactsApp').controller('ContactsListController', function($sco
             console.log("An error occured while retrieving contacts list from the server");
         }
     );
-    
+    $scope.delete = function(index){
+        var contact = $scope.contactslist[index];
+        ContactsFactory.deleteContact(contact.email)
+        .then(
+          function(res){
+             $scope.contactslist.splice(index,1);
+              $scope.message = res.data.message;
+              $state.go('getContacts.delete');
+              
+          },
+            function(data,status,headers,config){
+                $scope.message="An error occured while trying to delete the contact at the server";
+                
+            }
+        
+        );
+    }
     $scope.update = function(index){
         var contact =$scope.contactslist[index];
         $state.go('getContacts.update',{name:contact.name, email:contact.email, phone:contact.phone});
