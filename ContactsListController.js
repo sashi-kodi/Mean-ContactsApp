@@ -15,4 +15,16 @@ angular.module('contactsApp').controller('ContactsListController', function($sco
         var contact =$scope.contactslist[index];
         $state.go('getContacts.update',{name:contact.name, email:contact.email, phone:contact.phone});
     }
+    $scope.$on('refresh',function(event,data){
+        console.log('received refresh event');
+        var email =data.email;
+        event.preventDefault();
+       for(var i=0;i<$scope.contactslist.length;i++){
+           if(email === $scope.contactslist[i].email){
+               $scope.contactslist[i].name = data.name;
+               $scope.contactslist[i].phone = data.phone;
+           }
+       }
+        
+    });
 });
